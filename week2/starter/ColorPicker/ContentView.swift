@@ -37,9 +37,9 @@ struct ContentView: View {
   @State private var greenColor: Double = 0.0
   @State private var blueColor: Double = 0.0
   @State private var foregroundColor = Color(red: 0, green: 0, blue: 0)
-
+  
   var body: some View {
-
+    
     VStack {
       Text("Color Picker")
         .font(.largeTitle)
@@ -47,33 +47,32 @@ struct ContentView: View {
       RoundedRectangle(cornerRadius: 0)
         .foregroundColor(foregroundColor)
         .border(.black)
-      VStack {
-        Text("Red")
-        HStack {
-          Slider(value: $redColor, in: 0...255)
-          Text("\(Int(redColor.rounded()))")
-        }
-      }
-      VStack {
-        Text("Green")
-        HStack {
-          Slider(value: $greenColor, in: 0...255)
-          Text("\(Int(greenColor.rounded()))")
-        }
-      }
-      VStack {
-        Text("Blue")
-        HStack {
-          Slider(value: $blueColor, in: 0...255)
-          Text("\(Int(blueColor.rounded()))")
-        }
-      }
+
+      SliderView(title: "Red", value: $redColor)
+      SliderView(title: "Green", value: $greenColor)
+      SliderView(title: "Blue", value: $blueColor)
+
       Button("Set Color") {
         foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
       }
     }
     .padding(20)
+    
+  }
+}
 
+struct SliderView: View {
+  var title: String
+  @Binding var value: Double
+  
+  var body: some View {
+    VStack {
+      Text(title)
+      HStack {
+        Slider(value: $value, in: 0...255)
+        Text(String(Int(value.rounded())))
+      }
+    }
   }
 }
 
