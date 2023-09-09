@@ -56,11 +56,8 @@
 		18D775BF22AD944300AE281E /* ColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
-				18D775C422AD944300AE281E /* ContentView.swift */,
-				18D775C622AD944400AE281E /* Assets.xcassets */,
-				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
-				18D775CE22AD944400AE281E /* Info.plist */,
+				A45EF2722AACB7A000683BD1 /* App */,
+				A45EF2732AACB7C400683BD1 /* Views */,
 				18D775C822AD944400AE281E /* Preview Content */,
 			);
 			path = ColorPicker;
@@ -72,6 +69,25 @@
 				18D775C922AD944400AE281E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A45EF2722AACB7A000683BD1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1839F4AF25190F2A00BB00F1 /* AppMain.swift */,
+				18D775C622AD944400AE281E /* Assets.xcassets */,
+				18D775CE22AD944400AE281E /* Info.plist */,
+				18D775DA22AD963800AE281E /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A45EF2732AACB7C400683BD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18D775C422AD944300AE281E /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +328,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ColorPicker/Preview Content\"";
 				DEVELOPMENT_TEAM = BBK84N9JY9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				INFOPLIST_FILE = ColorPicker/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,7 +349,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ColorPicker/Preview Content\"";
 				DEVELOPMENT_TEAM = BBK84N9JY9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				INFOPLIST_FILE = ColorPicker/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

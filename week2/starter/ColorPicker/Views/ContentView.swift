@@ -51,7 +51,7 @@ struct ContentView: View {
       SliderView(title: "Red", value: $redColor)
       SliderView(title: "Green", value: $greenColor)
       SliderView(title: "Blue", value: $blueColor)
-
+  
       Button("Set Color") {
         foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
       }
