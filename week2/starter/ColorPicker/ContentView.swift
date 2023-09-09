@@ -72,7 +72,6 @@ struct ContentView: View {
         foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
       }
     }
-    .background(Color.white)
     .padding(20)
 
   }
