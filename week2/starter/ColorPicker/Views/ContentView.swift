@@ -49,8 +49,11 @@ struct ContentView: View {
         .border(.black)
 
       SliderView(title: "Red", value: $redColor)
+        .tint(.red)
       SliderView(title: "Green", value: $greenColor)
+        .tint(.green)
       SliderView(title: "Blue", value: $blueColor)
+        .tint(.blue)
   
       SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
     }
