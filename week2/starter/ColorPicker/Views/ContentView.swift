@@ -46,7 +46,7 @@ struct ContentView: View {
 
       RoundedRectangle(cornerRadius: 0)
         .foregroundColor(foregroundColor)
-        .border(.black)
+        .border(Color.gray.opacity(0.5), width: 10)
 
       SliderView(title: "Red", value: $redColor)
         .tint(.red)
@@ -103,5 +103,8 @@ struct SetColorButton: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+    ContentView()
+      .preferredColorScheme(.dark)
+      .previewDisplayName("Dark")
   }
 }
