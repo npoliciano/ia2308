@@ -41,9 +41,7 @@ struct ContentView: View {
   var body: some View {
     
     VStack(spacing: 16) {
-      Text("Color Picker")
-        .font(.largeTitle)
-        .bold()
+      TitleView(title: "Color Picker")
 
       RoundedRectangle(cornerRadius: 0)
         .foregroundColor(foregroundColor)
@@ -59,7 +57,16 @@ struct ContentView: View {
       SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
     }
     .padding(24)
-    
+  }
+}
+
+struct TitleView: View {
+  var title: String
+  
+  var body: some View {
+    Text(title)
+      .font(.largeTitle)
+      .bold()
   }
 }
 
