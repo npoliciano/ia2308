@@ -37,32 +37,60 @@ struct ContentView: View {
   @State private var greenColor: Double = 0.0
   @State private var blueColor: Double = 0.0
   @State private var foregroundColor = Color(red: 0, green: 0, blue: 0)
+  @Environment (\.verticalSizeClass) private var verticalSizeClass
   
   var body: some View {
-    
-    VStack(spacing: 16) {
-      TitleView(title: "Color Picker")
-
-      ColorDisplayView(color: foregroundColor)
-      
-      SliderView(title: "Red", value: $redColor)
-        .tint(.red)
-      SliderView(title: "Green", value: $greenColor)
-        .tint(.green)
-      SliderView(title: "Blue", value: $blueColor)
-        .tint(.blue)
-  
-      SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
+    if verticalSizeClass == .compact {
+      HStack(spacing: 16) {
+        VStack {
+          TitleView(title: "Color Picker")
+          
+          ColorDisplayView(color: foregroundColor)
+        }
+        VStack {
+          SliderView(title: "Red", value: $redColor)
+            .tint(.red)
+          SliderView(title: "Green", value: $greenColor)
+            .tint(.green)
+          SliderView(title: "Blue", value: $blueColor)
+            .tint(.blue)
+          
+          SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
+        }
+      }
+      .padding(24)
+    } else {
+      VStack(spacing: 16) {
+        VStack {
+          TitleView(title: "Color Picker")
+          
+          ColorDisplayView(color: foregroundColor)
+        }
+        VStack {
+          SliderView(title: "Red", value: $redColor)
+            .tint(.red)
+          SliderView(title: "Green", value: $greenColor)
+            .tint(.green)
+          SliderView(title: "Blue", value: $blueColor)
+            .tint(.blue)
+          
+          SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
+        }
+      }
+      .padding(24)
     }
-    .padding(24)
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+      .previewDisplayName("Portrait")
     ContentView()
       .preferredColorScheme(.dark)
       .previewDisplayName("Dark")
+    ContentView()
+      .previewInterfaceOrientation(.landscapeLeft)
+      .previewDisplayName("Landscape")
   }
 }
