@@ -52,9 +52,7 @@ struct ContentView: View {
       SliderView(title: "Green", value: $greenColor)
       SliderView(title: "Blue", value: $blueColor)
   
-      Button("Set Color") {
-        foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
-      }
+      SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
     }
     .padding(20)
     
@@ -72,6 +70,19 @@ struct SliderView: View {
         Slider(value: $value, in: 0...255)
         Text(String(Int(value.rounded())))
       }
+    }
+  }
+}
+
+struct SetColorButton: View {
+  var redColor: Double
+  var greenColor: Double
+  var blueColor: Double
+  @Binding var foregroundColor: Color
+  
+  var body: some View {
+    Button("Set Color") {
+      foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
     }
   }
 }
