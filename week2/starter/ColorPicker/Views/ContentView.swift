@@ -42,42 +42,49 @@ struct ContentView: View {
   var body: some View {
     if verticalSizeClass == .compact {
       HStack(spacing: 16) {
-        VStack {
-          TitleView(title: "Color Picker")
-          
-          ColorDisplayView(color: foregroundColor)
-        }
-        VStack {
-          SliderView(title: "Red", value: $redColor)
-            .tint(.red)
-          SliderView(title: "Green", value: $greenColor)
-            .tint(.green)
-          SliderView(title: "Blue", value: $blueColor)
-            .tint(.blue)
-          
-          SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
-        }
+        InnerContentView(
+          redColorValue: $redColor,
+          greenColorValue: $greenColor,
+          blueColorValue: $blueColor,
+          foregroundColor: $foregroundColor
+        )
       }
       .padding(24)
     } else {
       VStack(spacing: 16) {
-        VStack {
-          TitleView(title: "Color Picker")
-          
-          ColorDisplayView(color: foregroundColor)
-        }
-        VStack {
-          SliderView(title: "Red", value: $redColor)
-            .tint(.red)
-          SliderView(title: "Green", value: $greenColor)
-            .tint(.green)
-          SliderView(title: "Blue", value: $blueColor)
-            .tint(.blue)
-          
-          SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
-        }
+        InnerContentView(
+          redColorValue: $redColor,
+          greenColorValue: $greenColor,
+          blueColorValue: $blueColor,
+          foregroundColor: $foregroundColor
+        )
       }
       .padding(24)
+    }
+  }
+}
+
+private struct InnerContentView: View {
+  @Binding var redColorValue: Double
+  @Binding var greenColorValue: Double
+  @Binding var blueColorValue: Double
+  @Binding var foregroundColor: Color
+  
+  var body: some View {
+    VStack {
+      TitleView(title: "Color Picker")
+      
+      ColorDisplayView(color: foregroundColor)
+    }
+    VStack {
+      SliderView(title: "Red", value: $redColorValue)
+        .tint(.red)
+      SliderView(title: "Green", value: $greenColorValue)
+        .tint(.green)
+      SliderView(title: "Blue", value: $blueColorValue)
+        .tint(.blue)
+      
+      SetColorButton(redColor: redColorValue, greenColor: greenColorValue, blueColor: blueColorValue, foregroundColor: $foregroundColor)
     }
   }
 }
