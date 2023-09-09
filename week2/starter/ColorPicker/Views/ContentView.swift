@@ -40,14 +40,15 @@ struct ContentView: View {
   
   var body: some View {
     
-    VStack {
+    VStack(spacing: 16) {
       Text("Color Picker")
         .font(.largeTitle)
+        .bold()
 
       RoundedRectangle(cornerRadius: 0)
         .foregroundColor(foregroundColor)
         .border(Color.gray.opacity(0.5), width: 10)
-
+      
       SliderView(title: "Red", value: $redColor)
         .tint(.red)
       SliderView(title: "Green", value: $greenColor)
@@ -57,7 +58,7 @@ struct ContentView: View {
   
       SetColorButton(redColor: redColor, greenColor: greenColor, blueColor: blueColor, foregroundColor: $foregroundColor)
     }
-    .padding(20)
+    .padding(24)
     
   }
 }
@@ -69,9 +70,11 @@ struct SliderView: View {
   var body: some View {
     VStack {
       Text(title)
+        .font(.title3)
       HStack {
         Slider(value: $value, in: 0...255)
         Text(String(Int(value.rounded())))
+          .bold()
       }
     }
   }
@@ -87,14 +90,15 @@ struct SetColorButton: View {
     Button("Set Color") {
       foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
     }
+    .font(.headline)
     .bold()
     .foregroundColor(Color.white)
-    .frame(width: 100)
+    .frame(height: 24)
     .padding()
     .background(Color.blue)
-    .cornerRadius(12.0)
+    .cornerRadius(16.0)
     .overlay(
-      RoundedRectangle(cornerRadius: 12.0)
+      RoundedRectangle(cornerRadius: 16.0)
         .stroke(Color.white, lineWidth: 2)
     )
   }
