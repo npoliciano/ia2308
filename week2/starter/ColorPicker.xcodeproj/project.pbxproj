@@ -16,6 +16,7 @@
 		A45EF27D2AACD64800683BD1 /* ColorDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45EF27C2AACD64800683BD1 /* ColorDisplayView.swift */; };
 		A45EF27F2AACD6DC00683BD1 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45EF27E2AACD6DC00683BD1 /* SliderView.swift */; };
 		A45EF2812AACD78A00683BD1 /* SetColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45EF2802AACD78A00683BD1 /* SetColorButton.swift */; };
+		A45EF2842AACF04000683BD1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45EF2832AACF04000683BD1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A45EF27C2AACD64800683BD1 /* ColorDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDisplayView.swift; sourceTree = "<group>"; };
 		A45EF27E2AACD6DC00683BD1 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		A45EF2802AACD78A00683BD1 /* SetColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColorButton.swift; sourceTree = "<group>"; };
+		A45EF2832AACF04000683BD1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				A45EF2722AACB7A000683BD1 /* App */,
 				A45EF2732AACB7C400683BD1 /* Views */,
+				A45EF2822AACEFF500683BD1 /* Models */,
 				18D775C822AD944400AE281E /* Preview Content */,
 			);
 			path = ColorPicker;
@@ -100,6 +103,14 @@
 				A45EF2802AACD78A00683BD1 /* SetColorButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A45EF2822AACEFF500683BD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A45EF2832AACF04000683BD1 /* Constants.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				A45EF27D2AACD64800683BD1 /* ColorDisplayView.swift in Sources */,
 				A45EF2812AACD78A00683BD1 /* SetColorButton.swift in Sources */,
 				1839F4B025190F2A00BB00F1 /* AppMain.swift in Sources */,
+				A45EF2842AACF04000683BD1 /* Constants.swift in Sources */,
 				A45EF27B2AACD5FF00683BD1 /* TitleView.swift in Sources */,
 				A45EF27F2AACD6DC00683BD1 /* SliderView.swift in Sources */,
 			);

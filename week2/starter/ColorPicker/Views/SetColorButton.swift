@@ -40,7 +40,11 @@ struct SetColorButton: View {
   
   var body: some View {
     Button("Set Color") {
-      foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
+      foregroundColor = Color(
+        red: redColor / 255,
+        green: greenColor / 255,
+        blue: blueColor / 255
+      )
     }
     .font(.headline)
     .bold()
@@ -48,15 +52,20 @@ struct SetColorButton: View {
     .frame(height: 24)
     .padding()
     .background(Color.blue)
-    .cornerRadius(16.0)
+    .cornerRadius(Constants.Radius.regular)
     .overlay(
-      RoundedRectangle(cornerRadius: 16.0)
-        .stroke(Color.white, lineWidth: 2)
+      RoundedRectangle(cornerRadius: Constants.Radius.regular)
+        .stroke(Color.white, lineWidth: Constants.BorderWidth.thin)
     )
   }
 }
 struct SetColorButton_Previews: PreviewProvider {
-    static var previews: some View {
-      SetColorButton(redColor: 50, greenColor: 100, blueColor: 200, foregroundColor: .constant(.green))
-    }
+  static var previews: some View {
+    SetColorButton(
+      redColor: 50,
+      greenColor: 100,
+      blueColor: 200,
+      foregroundColor: .constant(.green)
+    )
+  }
 }

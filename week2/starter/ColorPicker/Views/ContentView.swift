@@ -33,15 +33,19 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var redColor: Double = 0.0
-  @State private var greenColor: Double = 0.0
-  @State private var blueColor: Double = 0.0
-  @State private var foregroundColor = Color(red: 0, green: 0, blue: 0)
+  @State private var redColor = Constants.General.initialRed
+  @State private var greenColor = Constants.General.initialGreen
+  @State private var blueColor = Constants.General.initialBlue
+  @State private var foregroundColor = Color(
+    red: Constants.General.initialRed / 255,
+    green: Constants.General.initialGreen / 255,
+    blue: Constants.General.initialBlue / 255
+  )
   @Environment (\.verticalSizeClass) private var verticalSizeClass
   
   var body: some View {
     if verticalSizeClass == .compact {
-      HStack(spacing: 16) {
+      HStack(spacing: Constants.Spacing.regular) {
         InnerContentView(
           redColorValue: $redColor,
           greenColorValue: $greenColor,
@@ -49,9 +53,9 @@ struct ContentView: View {
           foregroundColor: $foregroundColor
         )
       }
-      .padding(24)
+      .padding(Constants.Spacing.large)
     } else {
-      VStack(spacing: 16) {
+      VStack(spacing: Constants.Spacing.regular) {
         InnerContentView(
           redColorValue: $redColor,
           greenColorValue: $greenColor,
@@ -59,7 +63,7 @@ struct ContentView: View {
           foregroundColor: $foregroundColor
         )
       }
-      .padding(24)
+      .padding(Constants.Spacing.large)
     }
   }
 }
@@ -84,7 +88,12 @@ private struct InnerContentView: View {
       SliderView(title: "Blue", value: $blueColorValue)
         .tint(.blue)
       
-      SetColorButton(redColor: redColorValue, greenColor: greenColorValue, blueColor: blueColorValue, foregroundColor: $foregroundColor)
+      SetColorButton(
+        redColor: redColorValue,
+        greenColor: greenColorValue,
+        blueColor: blueColorValue,
+        foregroundColor: $foregroundColor
+      )
     }
   }
 }

@@ -36,15 +36,18 @@ struct ColorDisplayView: View {
   var color: Color
   
   var body: some View {
-    RoundedRectangle(cornerRadius: 0)
+    RoundedRectangle(cornerRadius: Constants.Radius.none)
       .foregroundColor(color)
-      .border(Color.gray.opacity(0.5), width: 10)
+      .border(
+        Constants.Color.translucentGray,
+        width: Constants.BorderWidth.thick
+      )
   }
 }
 
 struct ColorDisplayView_Previews: PreviewProvider {
-    static var previews: some View {
-      ColorDisplayView(color: .cyan)
-        .padding()
-    }
+  static var previews: some View {
+    ColorDisplayView(color: .cyan)
+      .padding()
+  }
 }

@@ -32,26 +32,25 @@
 
 import SwiftUI
 
-struct SliderView: View {
-  var title: String
-  @Binding var value: Double
-  
-  var body: some View {
-    VStack {
-      Text(title)
-        .font(.title3)
-      HStack {
-        Slider(value: $value, in: 0...255)
-        Text(String(Int(value.rounded())))
-          .bold()
-      }
-    }
+enum Constants {
+  enum General {
+    static let initialRed = 0.0
+    static let initialGreen = 0.0
+    static let initialBlue = 0.0
   }
-}
-
-struct SliderView_Previews: PreviewProvider {
-  static var previews: some View {
-    SliderView(title: "Color", value: .constant(100))
-      .padding()
+  enum Spacing {
+    static let regular = CGFloat(16)
+    static let large = CGFloat(24)
+  }
+  enum Radius {
+    static let none = CGFloat(0)
+    static let regular = CGFloat(16)
+  }
+  enum BorderWidth {
+    static let thin = CGFloat(2)
+    static let thick = CGFloat(10)
+  }
+  enum Color {
+    static let translucentGray = SwiftUI.Color.gray.opacity(0.5)
   }
 }
