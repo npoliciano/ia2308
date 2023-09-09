@@ -43,9 +43,7 @@ struct ContentView: View {
     VStack(spacing: 16) {
       TitleView(title: "Color Picker")
 
-      RoundedRectangle(cornerRadius: 0)
-        .foregroundColor(foregroundColor)
-        .border(Color.gray.opacity(0.5), width: 10)
+      ColorDisplayView(color: foregroundColor)
       
       SliderView(title: "Red", value: $redColor)
         .tint(.red)
@@ -67,6 +65,16 @@ struct TitleView: View {
     Text(title)
       .font(.largeTitle)
       .bold()
+  }
+}
+
+struct ColorDisplayView: View {
+  var color: Color
+  
+  var body: some View {
+    RoundedRectangle(cornerRadius: 0)
+      .foregroundColor(color)
+      .border(Color.gray.opacity(0.5), width: 10)
   }
 }
 
