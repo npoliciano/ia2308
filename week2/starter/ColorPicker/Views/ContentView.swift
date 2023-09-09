@@ -84,6 +84,16 @@ struct SetColorButton: View {
     Button("Set Color") {
       foregroundColor = Color(red: redColor / 255, green: greenColor / 255, blue: blueColor / 255)
     }
+    .bold()
+    .foregroundColor(Color.white)
+    .frame(width: 100)
+    .padding()
+    .background(Color.blue)
+    .cornerRadius(12.0)
+    .overlay(
+      RoundedRectangle(cornerRadius: 12.0)
+        .stroke(Color.white, lineWidth: 2)
+    )
   }
 }
 
