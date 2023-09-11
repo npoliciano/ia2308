@@ -33,7 +33,7 @@
 import SwiftUI
 
 struct TitleView: View {
-  var title: String
+  let title: String
   
   var body: some View {
     Text(title)

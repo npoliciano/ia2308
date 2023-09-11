@@ -33,7 +33,7 @@
 import SwiftUI
 
 struct ColorDisplayView: View {
-  var color: Color
+  let color: Color
   
   var body: some View {
     RoundedRectangle(cornerRadius: Constants.Radius.none)

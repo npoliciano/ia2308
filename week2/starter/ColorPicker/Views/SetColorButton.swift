@@ -33,9 +33,9 @@
 import SwiftUI
 
 struct SetColorButton: View {
-  var redColor: Double
-  var greenColor: Double
-  var blueColor: Double
+  let redColor: Double
+  let greenColor: Double
+  let blueColor: Double
   @Binding var foregroundColor: Color
   
   var body: some View {

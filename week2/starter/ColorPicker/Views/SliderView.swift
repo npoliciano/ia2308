@@ -33,7 +33,7 @@
 import SwiftUI
 
 struct SliderView: View {
-  var title: String
+  let title: String
   @Binding var value: Double
   
   var body: some View {
